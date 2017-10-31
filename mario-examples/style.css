@@ -5,6 +5,7 @@ html, body{
   width:100%;
   overflow: hidden;
   margin: 0;
+  background: lightblue;
 }
 
 .grass, .sky, .road{
@@ -40,14 +41,70 @@ html, body{
 }
 
 /*// ELEMENTS TO ANIMATE //*/
+.mario {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  animation: jump 0.3s ease,
+             drive 2s 0.3s ease-in,
+             jump 0.3s 2.3s ease;
+  animation-fill-mode: none, forwards, none;
+  animation-iteration-count: infinite;
+}
 
+.luigi {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  animation-name: drive;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
 
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  z-index: 9;
+  width: 200px;
+  left: 110px;
+  top: 60px;
+  opacity: 0.5;
+  animation: wind 2s cubic-bezier(.67,-0.01,.39,1.03) infinite alternate both;
+}
+
+.cloud:nth-child(2) {
+  z-index: 10;
+  width: 180px;
+  opacity: 0.7;
+  animation: wind 3s cubic-bezier(.67,-0.01,.39,1.03) infinite alternate-reverse both;
+}
+
+.cloud:nth-child(3) {
+  z-index: 8;
+  width: 360px;
+  height: 180px;
+}
 
 /*// KEYFRAMES //*/
+@keyframes drive{
+  from{ transform: translateX(0px) }
+  to{ transform: translateX(1000px) }
+}
 
+@keyframes wind{
+  from {
+    transform: translateX(-5px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
 
-
-
-
-
-
+@keyframes jump{
+  0%{ top: -40px; }
+  50%{ top: -200px;}
+  100%{ top: -40px; }
+}
