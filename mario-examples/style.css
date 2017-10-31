@@ -45,11 +45,8 @@ html, body{
   position: absolute;
   top: -40px;
   left: 0;
-  animation-name: drive;
-  animation-duration: 2s;
-  animation-fill-mode: both;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: jump 0.3s ease,
+             drive 3s 0.3s linear both infinite;
 }
 
 .luigi {
@@ -59,7 +56,7 @@ html, body{
   animation-name: drive;
   animation-duration: 5s;
   animation-fill-mode: both;
-  animation-iteration-count: linear;
+  animation-iteration-count: infinite;
 }
 
 .cloud {
@@ -72,24 +69,26 @@ html, body{
   left: 110px;
   top: 60px;
   opacity: 0.5;
-  animation: wind .75s cubic-bezier(.67,-0.01,.39,1.03) infinite alternate both;
+  animation: wind 2s cubic-bezier(.67,-0.01,.39,1.03) infinite alternate both;
 }
 
 .cloud:nth-child(2) {
   z-index: 10;
   width: 180px;
   opacity: 0.7;
-  animation: wind .75s cubic-bezier(.67,-0.01,.39,1.03) infinite alternate-reverse both;
+  animation: wind 3s cubic-bezier(.67,-0.01,.39,1.03) infinite alternate-reverse both;
 }
 
 .cloud:nth-child(3) {
   z-index: 8;
+  width: 360px;
+  height: 180px;
 }
 
 /*// KEYFRAMES //*/
 @keyframes drive{
-  from{ transform: translateX(-100px) }
-  to{ transform: translateX(1600px) }
+  from{ transform: translateX(0px) }
+  to{ transform: translateX(1500px) }
 }
 
 @keyframes wind{
@@ -99,4 +98,10 @@ html, body{
   to {
     transform: translateX(10px);
   }
+}
+
+@keyframes jump{
+  0%{ top: -40px; }
+  50%{ top: -200px;}
+  100%{ top: -40px; }
 }

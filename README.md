@@ -349,3 +349,43 @@ Source: [CSS Animation Tutorial #8 - Animaton Timing Functions](https://www.yout
   -   This makes life way easier
 
 Source: [CSS Animation Tutorial #9 - Animation Shorthand](https://www.youtube.com/watch?v=aGuq1euvbYc)
+
+## CSS Animation Tutorial #10 - Chaining Animations
+
+   -   Chaining Animations are really easy
+   -   You just seperate the animations by a comma in the animation attribute and you are set to go
+
+   Example:
+   ```css
+   .mario {
+     position: absolute;
+     top: -40px;
+     left: 0;
+     animation: jump 0.3s ease,
+                drive 3s 0.3s linear both infinite;
+   }
+   ```
+   What Just Happened?
+  -   Here Mario will jump then he will drive
+  -   The jump will only happen once
+
+
+   -   You can't chain more than 2 animations
+   -   If you want to chain more than 2 animations, you should use states
+
+  Example:
+  ```css
+  @keyframes jump{
+    0%{ top: -40px; }
+    50%{ top: -200px;}
+    100%{ top: -40px; }
+  }
+  ```
+  What Just Happened?
+  -   at  0 % of that animation, the element is at the position of -40px top
+  -   at 50% of the animation, the element is at the position of -200px top
+  -   at 100% of the animation, the element is at the position of -40px top
+  -   In conclusion this creates an animation like the element jumped
+
+
+Source: [CSS Animation Tutorial #10 - Chaining Animations](https://www.youtube.com/watch?v=B0tClxmu_IQ)
