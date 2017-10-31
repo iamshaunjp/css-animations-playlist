@@ -241,7 +241,7 @@ Source: [CSS Animation Tutorial #4 - KEYFRAMES](https://www.youtube.com/watch?v=
 
   -   animation-delay: 2s;  will run the animation after the specified time delated
 
-Source: [CSS Animation Tutorial #5 - Animation Fill Mode ](https://www.youtube.com/watch?v=irJXZnA3g5U)
+Source: [CSS Animation Tutorial #5 - Animation Fill Mode](https://www.youtube.com/watch?v=irJXZnA3g5U)
 
 
 ## CSS Animations Tutorials #6 - Repeating Animations
@@ -276,7 +276,7 @@ Source: [CSS Animation Tutorial #5 - Animation Fill Mode ](https://www.youtube.c
 }
 ```
 
-Source: [CSS Animations Tutorials #6 - Repeating Animations  ](https://www.youtube.com/watch?v=DCgcgXF0Fe0)
+Source: [CSS Animations Tutorials #6 - Repeating Animations](https://www.youtube.com/watch?v=DCgcgXF0Fe0)
 
 
 ## CSS Animation Tutorial #7 - Animation Direction
@@ -310,7 +310,7 @@ Source: [CSS Animations Tutorials #6 - Repeating Animations  ](https://www.youtu
 }
 ```
 
-Source: [CSS Animation Tutorial #7 - Animation Direction  ](https://www.youtube.com/watch?v=Bm_36uWbV_I)
+Source: [CSS Animation Tutorial #7 - Animation Direction](https://www.youtube.com/watch?v=Bm_36uWbV_I)
 
 ## CSS Animation Tutorial #8 - Animaton Timing Functions
 
@@ -319,4 +319,33 @@ Source: [CSS Animation Tutorial #7 - Animation Direction  ](https://www.youtube.
   -   cubic-bezier() lets you custom determine the rate of the animation
   -   You can use this [helpful website](http://cubic-bezier.com/#.24,-0.07,.93,1.93), to get 4 numbers for the cubic-bezier
 
-Source: [CSS Animation Tutorial #8 - Animaton Timing Functions  ](https://www.youtube.com/watch?v=t2zoXRXpCWs)
+Source: [CSS Animation Tutorial #8 - Animaton Timing Functions](https://www.youtube.com/watch?v=t2zoXRXpCWs)
+
+## CSS Animation Tutorial #9 - Animation Shorthand
+
+  -   there is short hand for writing animations
+
+  Standard
+  ```css
+  .cloud:nth-child(2) {
+    width: 300px;
+    top:0;
+    animation-name: wind;
+    animation-duraton: 4s;
+    animation-timing-function: ease-in;
+    animation-direction: alternate-reverse
+  }
+  ```
+
+  ShortHand Version
+  ```css
+  .cloud:nth-child(2) {
+    width: 300px;
+    top:0;
+    animation: wind 4s ease-in infinite alternate-reverse;
+  }
+  ```
+
+  -   This makes life way easier
+
+Source: [CSS Animation Tutorial #9 - Animation Shorthand](https://www.youtube.com/watch?v=aGuq1euvbYc)

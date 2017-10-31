@@ -49,21 +49,47 @@ html, body{
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(.24,-0.07,.93,1.93);
+  animation-timing-function: linear;
 }
 
 .luigi {
   position: absolute;
-  top: 100px;
+  top: 50px;
   left: 0;
   animation-name: drive;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-fill-mode: both;
-  animation-iteration-count: infinite;
+  animation-iteration-count: linear;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: wind 5s ease-in infinite alternate;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top:0;
+  animation: wind 4s ease-in infinite alternate-reverse;
 }
 
 /*// KEYFRAMES //*/
 @keyframes drive{
   from{ transform: translateX(-100px) }
   to{ transform: translateX(1600px) }
+}
+
+@keyframes wind{
+  from {
+    left:-20px;
+  }
+  to {
+    left: 35px;
+  }
 }
