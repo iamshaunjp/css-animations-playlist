@@ -46,7 +46,10 @@ html, body{
   top: -40px;
   left: 0;
   animation: jump 0.3s ease,
-             drive 3s 0.3s linear both infinite;
+             drive 2s 0.3s ease-in,
+             jump 0.3s 2.3s ease;
+  animation-fill-mode: none, forwards, none;
+  animation-iteration-count: infinite;
 }
 
 .luigi {
@@ -88,7 +91,7 @@ html, body{
 /*// KEYFRAMES //*/
 @keyframes drive{
   from{ transform: translateX(0px) }
-  to{ transform: translateX(1500px) }
+  to{ transform: translateX(1000px) }
 }
 
 @keyframes wind{
