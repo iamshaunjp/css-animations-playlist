@@ -148,8 +148,7 @@ Source: [W3Schools: Transform Property](https://www.w3schools.com/cssref/css3_pr
       border-radius: 50px;
       cursor: pointer;
       text-align: center;
-      /*background transition will take 1s
-      transform transition will take 0.3s */
+      /*background transition will take 1s, transform transition will take 0.3s */
       transition: background 1s, transform 0.3s;
     }
 
