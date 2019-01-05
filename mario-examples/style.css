@@ -1,5 +1,5 @@
+/*Original code by The Net Ninja - edited by me to make it responsive using media queries and percentages iso pixels*/
 /*// BASE STYLES //*/
-
 html, body{
   height: 100%;
   width:100%;
@@ -37,17 +37,130 @@ html, body{
   width: 100%;
   position: absolute;
   top: 45%;
+  z-index: 0;
 }
 
 /*// ELEMENTS TO ANIMATE //*/
+.mario {
+  position: absolute;
+  z-index: 1;
+  bottom: 60%;
+  animation: drive 3s linear both infinite,
+             jump 0.7s 0.7s;
+}
 
+.luigi {
+  position: absolute;
+  bottom: 10%;
+  animation: drive 4s linear both infinite;
+}
 
+.cloud:nth-child(1) {
+  position: absolute;
+  height: 30%;
+  opacity: 0.5;
+  animation: wind 20s infinite linear reverse;
+}
+
+.cloud:nth-child(2) {
+  position: absolute;
+  height: 50%;
+  animation: wind 15s infinite linear reverse;
+}
 
 /*// KEYFRAMES //*/
+/*// DRIVE MARIO AND LUIGI //*/
+@-webkit-keyframes drive {
+  from { left: -50vw; } /* or use -50% */
+  to { left: 150vw; } /* or use 150% */
+}
+@-o-keyframes drive {
+  from { left: -50vw; } /* or use -50% */
+  to { left: 150vw; } /* or use 150% */
+}
+@-moz-keyframes drive {
+  from { left: -50vw; } /* or use -50% */
+  to { left: 150vw; } /* or use 150% */
+}
+@keyframes drive {
+  from { left: -50vw; } /* or use -50% */
+  to { left: 150vw; } /* or use 150% */
+}
 
+/*// MAKE MARIO JUMP ONCE //*/
+@-webkit-keyframes jump {
+  0% { bottom: 60%; }
+  50% { bottom: 80%; }
+  100% { bottom: 60%; }
+}
+@-o-keyframes jump {
+  0% { bottom: 60%; }
+  50% { bottom: 80%; }
+  100% { bottom: 60%; }
+}
+@-moz-keyframes jump {
+  0% { bottom: 60%; }
+  50% { bottom: 80%; }
+  100% { bottom: 60%; }
+}
+@keyframes jump {
+  0% { bottom: 60%; }
+  50% { bottom: 80%; }
+  100% { bottom: 60%; }
+}
 
+/*// MOVE CLOUDS WITH THE WIND //*/
+@-webkit-keyframes wind {
+  from { transform: translateX(-50vw); } /* or use -50% */
+  to { transform: translateX(110vw);} /* or use 110% */
+}
+@-o-keyframes wind {
+  from { transform: translateX(-50vw); } /* or use -50% */
+  to { transform: translateX(110vw);} /* or use 110% */
+}
+@-moz-keyframes wind {
+  from { transform: translateX(-50vw); } /* or use -50% */
+  to { transform: translateX(110vw);} /* or use 110% */
+}
+@keyframes wind {
+  from { transform: translateX(-50vw); } /* or use -50% */
+  to { transform: translateX(110vw);} /* or use 110% */
+}
 
-
-
-
-
+/*// MEDIA QUERIES //*/
+@media screen and (max-height: 667px) {
+  .mario {
+    transform: scale(0.7);
+    bottom: 50%;
+  }
+  .luigi {
+    transform: scale(0.7);
+    bottom: 5%;
+  }
+  @-webkit-keyframes jump {
+    0% { bottom: 50%; }
+    50% { bottom: 70%; }
+    100% { bottom: 50%; }
+  }
+  @-o-keyframes jump {
+    0% { bottom: 50%; }
+    50% { bottom: 70%; }
+    100% { bottom: 50%; }
+  }
+  @-moz-keyframes jump {
+    0% { bottom: 50%; }
+    50% { bottom: 70%; }
+    100% { bottom: 50%; }
+  }
+  @keyframes jump {
+    0% { bottom: 50%; }
+    50% { bottom: 70%; }
+    100% { bottom: 50%; }
+  }
+}
+@media screen and (max-height: 1024px) {
+  .mario,
+  .luigi {
+    transform: scale(0.8);
+  }
+}

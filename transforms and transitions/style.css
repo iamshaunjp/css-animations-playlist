@@ -1,0 +1,45 @@
+body {
+  background: lightblue;
+  text-align: center;
+}
+
+.wrapper{
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/*// TRANSFORMS //*/
+img {
+  /* transform: translate(200px); */
+  /* transform: translate(-100px, 50%); */
+  /* transform: scaleX(0.5); */
+  /* transform: scaleY(0.2); */
+  /* transform: scale(0.5); */
+  /* transform: rotateX(60deg); */
+  /* transform: skew(30deg, 20deg); */
+  /* transform: rotateZ(-90deg) translateY(200px) scale(0.5); */
+}
+
+/*// TRANSITIONS //*/
+.circle  {
+  width: 100px;
+  padding: 50px 0;
+  line-height: 0;
+  margin: 60px auto;
+  background: pink;
+  color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  text-align: center;
+  /*the background color and rotation will take 1s to change */
+  /* transition: 1s; */
+  /*background transition will take 2s
+  transform transition will take 0.3s */
+  transition: background 2s, transform 0.3s ease-in;
+}
+
+.circle:hover {
+  background: salmon;
+  transform: rotate(360deg);
+}
