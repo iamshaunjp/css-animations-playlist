@@ -15,35 +15,38 @@ h1 {
   text-align: center;
 }
 
-.grid {
+ul.panels {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));/* creates as much columns as can fit with a min width of 150px */
+  list-style-type: none;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 .front,
 .back {
   padding: 50% 0;
-  text-align: center;
-  font-size: 20px;
-  text-transform: uppercase;
   color: white;
+  font-size: 20px;
+  text-align: center;
   cursor: pointer;
 }
 
 /*// ANIMATION STYLES //*/
-
 .back {
-  transform: rotateY(90deg);
-  position: absolute;
+  transform: rotateY(70deg); /* change back to 90deg when finished layout */
+  position: /*?*/;
+}
+/* ??? HOW TO PLACE THE BACK CARDS BEHIND THE FRONT CARDS ??? */
+.front {
+  position: /*?*/;
 }
 
-.front:hover {
+ul li div.front:hover {
   animation: flip 1s forwards ease-in;
 }
-.back:hover {
+
+ul li:hover div.back { /* cannot hover over a 90deg rotated card so hover over li container instead but animation is applied to .back*/
   animation: flip 1s 1s forwards ease-out reverse;
-  /* back is invisible since it is rotated by 90deg so you cannot hover over it; and there is no containing elements that I can target => animation does not work for back side */
 }
 
 @-webkit-keyframes flip {
