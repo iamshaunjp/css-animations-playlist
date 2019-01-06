@@ -1,3 +1,75 @@
+/*// MY VERSION OF CODE //*/
+body {
+  background: #333;
+  font-family: verdana, sans-serif;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+h1 {
+  color: white;
+  font-weight: normal;
+  text-align: center;
+}
+
+ul li {
+  list-style-type: none;
+  width: 25%;
+  float: left;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  cursor: pointer;
+  position: relative; /*see below where front cards are placed absolutely*/
+}
+
+ul li div {
+  padding: 50% 0; /* top and bottom 50% of width parent li which makes it almost square*/
+}
+
+/*// ANIMATION STYLES //*/
+ul li div.back {
+  transform: rotateY(90deg); /*rotating back card by 90° along Y axis makes the back card invisible*/
+}
+
+ul li div.front {
+  position: absolute;/*removes front card from normal document flow, back card moves up behind front card only if parent element(li) is positioned relative (parent element must be other than static to make position: absolute work) */
+  width: 100%; /*since item is removed from normal document flow, we now have to expand the width to 100%*/
+}
+
+ul li div.front:hover { /* front card is large enough to hover over */
+  animation: flip 1s forwards ease-in;
+}
+
+ul li:hover div.back { /* back card is invisible (rotated 90deg) so hover over li instead */
+  animation: flip 1s 1s forwards ease-out reverse;
+  /*reverse: because back card is already rotated by 90° and we need to turn it back to 0°*/
+}
+
+@-webkit-keyframes flip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(90deg); }
+}
+@-o-keyframes flip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(90deg); }
+}
+@-moz-keyframes flip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(90deg); }
+}
+@keyframes flip {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(90deg); }
+}
+
+/*// ORIGINAL CODE FROM THE NET NINJA: //*/
+/*
 body{
   background: #333;
   font-family: verdana;
@@ -44,10 +116,25 @@ h1{
 
 /*// ANIMATION STYLES //*/
 
+.panels div.back {
+  transform: rotateY(90deg);
+}
 
+.panels div.front {
+  position: absolute;
+  width: 100%;
+  }
 
+.panels li:hover div.front {
+  animation: flip 1s ease-in forwards;
+}
 
+.panels li:hover div.back {
+  animation: flip 1s 1s ease-out forwards reverse;
+}
 
-
-
-
+@keyframes flip {
+  0% {transform: rotateY(0deg);}
+  100% {transform: rotateY(90deg);}
+}
+*/
