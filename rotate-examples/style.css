@@ -1,4 +1,4 @@
-/*// MY VERSION OF CODE //*/
+/*// MY VERSION OF CODE USING RESPONSIVE CSS GRID //*/
 body {
   background: #333;
   font-family: verdana, sans-serif;
@@ -22,6 +22,10 @@ ul.panels {
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
+ul li {
+  position: relative;
+}
+
 .front,
 .back {
   padding: 50% 0;
@@ -33,20 +37,19 @@ ul.panels {
 
 /*// ANIMATION STYLES //*/
 .back {
-  transform: rotateY(70deg); /* change back to 90deg when finished layout */
-  position: /*?*/;
+  transform: rotateY(90deg);
 }
-/* ??? HOW TO PLACE THE BACK CARDS BEHIND THE FRONT CARDS ??? */
 .front {
-  position: /*?*/;
+  position: absolute;
+  width: 100%;
 }
 
 ul li div.front:hover {
-  animation: flip 1s forwards ease-in;
+  animation: flip 0.5s forwards ease-in;
 }
 
 ul li:hover div.back { /* cannot hover over a 90deg rotated card so hover over li container instead but animation is applied to .back*/
-  animation: flip 1s 1s forwards ease-out reverse;
+  animation: flip 0.5s 0.5s forwards ease-out reverse;
 }
 
 @-webkit-keyframes flip {
