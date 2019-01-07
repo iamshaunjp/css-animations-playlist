@@ -5,8 +5,9 @@ body {
 }
 
 .wrapper {
-  width: 80vw;
+  width: 80vw; /* 80% of viewport width */
   margin: 40px auto;
+  /* top and bottom margin 40px, auto = centered horizontally across the page */
 }
 
 h1 {
@@ -18,16 +19,18 @@ h1 {
 ul.panels {
   display: grid;
   grid-gap: 10px;
-  list-style-type: none;
+  list-style-type: none; /* to remove list bullets */
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  /* creates as much columns as can fit with a min width of 150px */
 }
 
-ul li {
+ul.panels li {
   position: relative;
+  /* li=parent element which must be other than static to be able to display it's child element(div.front) as absolute */
 }
 
-.front,
-.back {
+div.front,
+div.back {
   padding: 50% 0;
   color: white;
   font-size: 20px;
@@ -36,20 +39,27 @@ ul li {
 }
 
 /*// ANIMATION STYLES //*/
-.back {
+div.back {
   transform: rotateY(90deg);
 }
-.front {
+
+div.front {
+  /* front cards take up width of parent li which gets dynamic grid column width from line 23 */
   position: absolute;
+  /* removes front cards from normal document flow so back cards disappear behind front cards */
+  /* but now width shrinks to fit text */
   width: 100%;
+  /* expand width back to full 100% of the dynamic grid column width */
 }
 
 ul li div.front:hover {
   animation: flip 0.5s forwards ease-in;
 }
 
-ul li:hover div.back { /* cannot hover over a 90deg rotated card so hover over li container instead but animation is applied to .back*/
+/* cannot hover over a 90deg rotated card so hover over li container instead but animation is applied to .back */
+ul li:hover div.back {
   animation: flip 0.5s 0.5s forwards ease-out reverse;
+  /* reverse because back cards are already rotated 90deg (line 43) and need to be rotated back to 0deg */
 }
 
 @-webkit-keyframes flip {
