@@ -16,13 +16,18 @@ p{
 }
 #pop-up{
   position: relative; 
-  top: 200px; 
+  top: -300px; 
   width: 500px; 
   margin: 0 auto; 
   text-align: center;
+  transform-origin: 10px;
+  animation: slide 1s ease-in-out forwards,
+             swing 2s 2s ease-in-out forwards,
+             go 2s 7s ease-in-out forwards;
 }
 #pop-up .container{
   background: #f0e4d4; 
+  border-radius: 10px;
   padding: 30px; 
   position: absolute; 
   top: 50px; 
@@ -59,9 +64,28 @@ button{
   text-align: center;
   border-radius: 11px;
 }
-
 /*// POP-UP ANIMATION STYLES //*/
 
+@keyframes slide {
+  80% {transform: translateY(650px)}
+  100% {transform: translateY(600px)}
+}
+
+@keyframes swing {
+  60% {transform: translateY(600px) rotate(90deg)}
+  80% {transform: translateY(600px) rotate(60deg)}
+  100% {transform: translateY(600px) rotate(70deg)}
+}
+
+@keyframes go {
+  from {
+    transform: translateY(600px) rotate(70deg)
+  }
+  to {
+    transform-origin: center;
+    transform: translateY(600px) rotate(2turn) scale(0);
+  }
+}
 
 /*// BASKET BASE STYLES //*/
 
